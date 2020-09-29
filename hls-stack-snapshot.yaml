@@ -1,23 +1,22 @@
 resolver: lts-16.5
 
-# packages:
-# - .
-# - ./ghcide/
-# - ./hls-plugin-api
-
-# ghc-options:
-#   "$everything": -haddock
-
 packages:
-    # dont fetch submodules
-# - github: haskell/haskell-language-server
 - git: https://github.com/haskell/haskell-language-server.git
-  # 0.4 release
-  commit: 0a18edde24923251a148cbbc0ae993a6aac83b9c
+  commit: 5729c2ea119e9d48c136cc75c377d41fec811dde
   subdirs:
     - .
     - ./ghcide/
     - ./hls-plugin-api
+# - github: haskell/haskell-language-server
+  # commit: 5729c2ea119e9d48c136cc75c377d41fec811dde
+  # subdirs:
+  #   - .
+  #   - ./hls-plugin-api
+# - github: haskell/ghcide
+  # commit: b279afbce74ef691a47159314e0b7023b2f7074a
+
+
+
 - aeson-1.5.2.0
 - apply-refact-0.7.0.0
 - github: bubba/brittany
@@ -49,15 +48,15 @@ packages:
 - implicit-hie-0.1.1.0
 - hie-bios-0.7.1
 
-# flags:
-#   haskell-language-server:
-#     pedantic: true
-#   retrie:
-#     BuildExecutable: false
+flags:
+  # haskell-language-server:
+  #   pedantic: true
+  retrie:
+    BuildExecutable: false
 
 # allow-newer: true
 
 # nix:
 #   packages: [ icu libcxx zlib ]
 
-# concurrent-tests: false
+concurrent-tests: false

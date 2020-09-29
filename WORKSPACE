@@ -126,8 +126,8 @@ stack_snapshot(
     extra_deps = {"zlib": ["@zlib.dev//:zlib" if is_nix_shell else "@zlib.hs//:zlib"]},
     haddock = False,
     local_snapshot = "//:hls-stack-snapshot.yaml",
-    packages = ["ghcide"],
-    stack_snapshot_json = "//:hls-snapshot.json",
+    packages = ["haskell-language-server"],
+    # stack_snapshot_json = "//:hls-snapshot.json",
 )
 
 load(

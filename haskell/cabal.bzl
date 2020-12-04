@@ -1145,7 +1145,8 @@ library
             for (pkg, flags) in repository_ctx.attr.flags.items()
         },
     }).to_json()
-    repository_ctx.file("stack.yaml", content = stack_yaml_content, executable = False)
+    res = repository_ctx.file("stack.yaml", content = stack_yaml_content, executable = False)
+    print("generated content saved at ", repository_ctx.path("stack.yaml"))
 
     # Invoke stack to calculate the transitive dependencies.
     stack_cmd = repository_ctx.path(repository_ctx.attr.stack)
